@@ -1,0 +1,27 @@
+{% extends 'home.html' %}
+{% block content %}
+{% load static %}
+    <h4 style="text-align:center">List OF Student Name Sheet</h4>
+    <hr>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Country</th>
+                <th>Created_at</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in posts %}
+                <tr>
+                    <td>{{i.title}}</td>
+                    <td>{{i.content}}</td>
+                    <td>{{i.country}}</td>
+                    <td>{{i.created_at}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+	<style>
+ 
+		.center-container {
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  height: 100vh;
+		}
+		 
+		.login-container {
+		 
+		  width: 700px;
+		  margin: auto;
+		  padding: 20px;
+		  border: 1px solid #ddd;
+		  border-radius: 5px;
+		  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		 
+		.input-form {
+		  width: 640px;
+		  margin: auto;
+		  /* padding: 10px; */
+		  border: 1px solid #ddd;
+		  border-radius: 4px;
+		  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		  color: #007bff;
+		  padding: 20px 50px;
+		
+		}
+		.login-form {
+		  width: 660px;
+		  margin: auto;
+		  padding: 10px;
+		  border: 1px solid #ddd;
+		  border-radius: 4px;
+		  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		
+		}
+		 
+		.form-group {
+		  display: flex;
+		  flex-direction: column;
+		}
+		 
+		label {
+		  margin-bottom: 5px;
+		}
+		 
+		.btn {
+		  background-color: #007bff;
+		  color: #fff;
+		  padding: 20px 30px;
+		  border: none;
+		  border-radius: 3px;
+		  cursor: pointer;
+		  margin: 10px 250px;
+		}
+		 
+		.btn:hover {
+		  background-color: #0056b3;
+		}
+		 
+		label {
+		  margin-bottom: 5px;
+		  font-weight: normal; /* Make the label text bold */
+		}
+		 
+		h1 {
+		  color: #007bff; /* Change the color of the heading text */
+		  text-align: center; /* Center the heading text */
+		}
+	</style>
+ 
+<div class="center-container">
+  <div class="login-container">
+    <h1>POST CSV FILE UPLOAD:-</h1>
+	<form method="POST" class="login-form" enctype="multipart/form-data">
+		{% csrf_token %}
+		<div>
+			<input type="file" class="input-form" name="csv_file"><br><br>
+			<button type="submit" class="btn btn-primary">Upload</button>
+		</div>
+	</form>  
+    </form>
+  </div>
+</div>
+{% endblock content %}
+

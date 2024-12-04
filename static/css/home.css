@@ -1,0 +1,12 @@
+.card-title span{
+    font-size: 17px;
+}
+img{
+    max-width: 100%;
+}
+.card_section{
+    padding: 50px 0;
+}
+.card-header{
+    height: 80px;
+}

@@ -1,0 +1,51 @@
+table { 
+    height: 110px; 
+} 
+table thead th { 
+    position: sticky; 
+    top: 0px; 
+} 
+table { 
+    border-collapse: collapse;         
+    width: 100%; 
+} 
+th, 
+td { 
+    padding: 8px 15px; 
+    border: 2px solid #529432; 
+    background-color: #fff;
+} 
+th { 
+    background: #ABDD93; 
+} 
+
+.table_header{
+    position: absolute;
+    top: 10%;
+    margin-left: 50px;
+    left: 0%;
+    z-index: -1;
+}
+
+section.section_table {
+    margin-top: 1%;
+    
+}
+.table-responsive{height:50vh;}
+.card{
+    margin: 0 -10px 0 -10px;
+}
+h4 {
+    margin-top: 11px;
+    margin-bottom: -rem;
+    margin-left: 9px;
+    font-weight: 1000;
+    line-height: -10px;
+    font-size: 15px;
+}
+.card-body {
+    padding: 0 10px;
+}
+button{
+    margin-bottom: 10px;
+}

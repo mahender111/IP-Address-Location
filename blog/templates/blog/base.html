@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width", initial-scale=1.0">
+	<title>{% block head_title %}{% endblock %}</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+	<!-- Slick Slider CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/slick.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'css/slick-theme.css' %}" />
+	<!-- AOS Animation CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/aos.css' %}" />
+	<!-- Gallery Popup CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/magnific-popup.css' %}" />
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+
+</head>
+<body>
+
+    <div>
+        <header>
+            {% include 'navbar.html' %}  
+        </header>
+    </div>
+    <div>
+        {% block content %} 
+        {% endblock %} 
+    </div>
+    <div>
+        <footer>  
+        </footer>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+<script>
+    window.addEventListener("resize", function () {
+        "use strict"; window.location.reload();
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+        /////// Prevent closing from click inside dropdown
+        document.querySelectorAll('.dropdown-menu').forEach(function (element) {
+            element.addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+        })
+        // make it as accordion for smaller screens
+        if (window.innerWidth < 992) {
+            // close all inner dropdowns when parent is closed
+            document.querySelectorAll('.navbar .dropdown').forEach(function (everydropdown) {
+                everydropdown.addEventListener('hidden.bs.dropdown', function () {
+                    // after dropdown is hidden, then find all submenus
+                    this.querySelectorAll('.submenu')
+                        .forEach(function (everysubmenu) {
+                            // hide every submenu as well
+                            everysubmenu
+                                .style
+                                .display =
+                                'none';
+                        });
+                })
+            });
+            document.querySelectorAll('.dropdown-menu a').forEach(function (element) {
+                element.addEventListener('click', function (e) {
+                    let nextEl = this.nextElementSibling;
+                    if (nextEl && nextEl.classList
+                        .contains('submenu')) {
+                        // prevent opening link if link needs to open dropdown
+                        e.preventDefault();
+                        console.log(nextEl);
+                        if (nextEl.style.display ==
+                            'block') {
+                            nextEl.style.display =
+                                'none';
+                        }
+                        else {
+                            nextEl.style.display =
+                                'block';
+                        }
+                    }
+                });
+            })
+        }
+        // end if innerWidth
+    });
+     // DOMContentLoaded  end
+
+
+    
+  <!-- Bootstrap JS -->
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+  <!-- Slick Slider JS -->
+  <script src="{% static 'js/slick.min.js' %}"></script>
+  <script src="{% static 'js/slick-animation.min.js' %}"></script>
+  <!-- AOS Animation JS -->
+  <script src="{% static 'js/aos.js' %}"></script>
+  <!-- Gallery Popup JS -->
+  <script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+  <script src="{% static 'js/my_js.js' %}"></script>
+  <!-- ****************** -->
+
+</body>
+</html>

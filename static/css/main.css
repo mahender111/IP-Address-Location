@@ -1,0 +1,96 @@
+/* drop down content */
+
+.dropdown-content {       
+    display: none;       
+    background-color: #f9f9f9;       
+    min-width: 160px;       
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);       
+    z-index: 1;  
+    position:absolute;  
+    }
+.dropdown-content a {       
+    color: black;       
+    padding: 12px 16px;       
+    text-decoration: none;       
+    display: block;     
+    }     
+.dropdown-content a:hover {       
+    background-color: #f1f1f1;    
+    }     
+.dropdown:hover .dropdown-content {       
+    display: block;     
+    margin-top: 4px;
+    border-radius: 6%;
+    }
+ a{
+    border-radius: 8%;
+}
+.dropdown {  
+    display: inline-block;     
+}   
+
+.card-title span{
+    font-size: 17px;
+    }
+.logo img{
+    width: 110px;
+    }
+.header-btn{
+    list-style: none;
+    }
+.header-btn img{
+    border-radius: 50%;
+    width: 38px;
+    }
+.ms-lg-auto{
+    margin: 0;
+    }
+.header-btn dropdown{
+    display: inline-block;
+    }
+/* On screens that are 992px wide or less, the background color is blue */
+@media all and (min-width: 992px) {
+    .dropdown-menu {
+        background-color:white;
+        color: white;
+        /* width: auto; */
+    }
+    .bg-primary {
+        background-color: #207dda!important;
+        width: 100%;
+        padding: 10px;
+     }
+    .dropdown-menu li {
+        position: relative;
+       }
+    .dropdown-menu .submenu {
+        display: none;
+        left: 100%;
+        top: 0;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+        color: rgba(253, 253, 253, 0.918);
+    }
+    
+    .dropdown-menu>li:hover>.submenu,
+    .dropdown:hover>.dropdown-menu {
+        display: block;
+        color: rgba(253, 253, 253, 0.918);
+    }
+    }
+    
+/* image container  */
+.image-container {
+        /* Use Flexbox to create a horizontal row */
+    justify-content: space-between; /* Space images evenly within the containr */
+    border:1px solid black;
+}
+.image {
+    width: 10%; /* Set the width of each image to 30% of the containr */
+    max-width: 100%; /* Ensure images don't exceed their natural size */
+    border:1px solid black;
+}
+.navbar-nav {
+    justify-content: center;
+    width: 100%; /* Ensure the nav takes full width of its container */
+}

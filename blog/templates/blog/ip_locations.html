@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <title>IP Search</title>
+    <h1>IP Address Information</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="search">Enter IP Address:</label>
+        <input type="text" id="search" name="search" required>
+        <button type="submit">Search</button>
+    </form>
+    
+    {% if data %}
+    <h2>IP Information:</h2>
+    <p><strong>IP:</strong> {{ data.ip }}</p>
+    <p><strong>Country:</strong> {{ data.country_name }}</p>
+    <p><strong>City:</strong> {{ data.city }}</p>
+    <p><strong>Region:</strong> {{ data.region_name }}</p>
+    <p><strong>Latitude:</strong> {{ data.latitude }}</p>
+    <p><strong>Longitude:</strong> {{ data.longitude }}</p>
+    <p><strong>Location:</strong> {{ data.location }}</p>
+    {% else %}
+    <p>No data available. Please enter a valid IP address.</p>
+    {% endif %}
+{% endblock content %}
+

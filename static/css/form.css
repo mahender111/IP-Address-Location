@@ -1,0 +1,142 @@
+body{
+    background-color: #eee;
+}
+
+form .mb-3{
+    display: flex;
+}
+.form-select {
+    display: block;
+    width: 100%;
+    padding: .375rem 2.25rem .375rem .75rem;
+    -moz-padding-start: calc(0.75rem - 3px);
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+.form-control{
+    width: 33%;
+    font-size: 0.75rem;
+    height: 30px;
+}
+
+.col-form-label{
+    font-size: 12px;
+    height: 15px;
+    line-height: 10px;
+    padding: 15px;     
+    padding-right: 15px;
+    padding-left: 5px;
+    width: 33%;
+    display: flex;
+    align-items: center;
+    /* white-space: nowrap; */
+    
+}
+.form-row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -1px;
+    margin-left: 85px;
+}
+select{
+    background-color: #fff;
+    width: 25%;
+    font-size: 12px;
+
+}
+select{
+    background-color: #fff;
+    width: 25%;
+    font-size: 12px;
+    padding: 6px 3px;
+}
+.mb-3{
+    margin-bottom: 5px !important;
+}
+label{
+    background-color: #ddd;
+    width: 15%;
+    font-weight: 500;
+}
+
+.btn {
+    color: #fff;
+    background-color: #0a660a;
+    border-radius: 40px;
+    padding: 4px 9px;
+}
+
+#submit-id-cancel-and-back{
+    margin-left:  -200PX;
+}
+
+.form-select {
+    display: block;
+    width: 25%;
+    line-height: -0.25;
+}
+.navbar-expand-lg .navbar-collapse {
+    display: flex!important;
+    flex-basis: auto;
+    margin-bottom: -5px;
+    margin-top: -5PX;
+}   
+.row {
+    --bs-gutter-x: -0.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) * -.5);
+    margin-left: calc(var(--bs-gutter-x) * -.5);
+}
+h4 {
+    margin-top: 11px;
+    margin-bottom: 0.5rem;
+    margin-left: 95px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+#submit-id-cancel-and-back {
+    margin-left: -125PX;
+}
+#id_feasibility_no{
+    width: 80%;  
+    padding-left: 2px;
+}
+#id_feas_dt{
+    width: 50%;
+}
+#id_feas_rev_dt{
+    width: 80%;
+}
+#id_quote_validity_date{
+    width: 80%;
+}
+#id_feas_rev{
+    width: 80%;
+}
+#id_cust_name{
+    width: 80%;
+}
+#id_feas_dt{
+    width: 80%;
+}
+#id_no_of_sets{
+    width: 80%;
+}
+#id_cust_prod_no{
+    width: 80%;
+}
+#id_feas_status {
+    width: 80%;           
+}
+#id_kv_class{
+    width: 80%;
+}
+#id_kit_name{
+    width: 80%;
+}

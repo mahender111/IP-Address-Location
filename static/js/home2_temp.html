@@ -1,0 +1,369 @@
+{% load static %}
+{% extends 'base.html' %} 
+{% include 'benner.html' %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block head_title %}{% endblock %}</title>
+    {% block extra_head %}{% endblock %}</title>
+
+    <title>Enpay Project</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Font Awesome CSS -->
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .card-title span{
+            font-size: 17px;
+        }
+        .logo img{
+            width: 110px;
+        }
+        img,image {
+    max-width: 100%;
+}
+        .card_section{
+            padding: 50px 0;
+        }
+        /* .card_section .card{
+            height: 300px;
+        } */
+        .card-header{
+            height: 80px;
+        }
+        .header-btn{
+            list-style: none;
+        }
+        .header-btn img{
+            border-radius: 50%;
+            width: 38px;
+        }
+        .ms-lg-auto{
+            margin: 0;
+        }
+        @media all and (min-width: 992px) {
+            .dropdown-menu {
+                width: 22rem;
+            }
+
+            .mega-submenu {
+                left: 100%;
+                top: 0;
+                min-width: 25rem;
+            }
+
+            .ktm-mega-menu {
+                position: static;
+            }
+
+            .mega-menu {
+                left: 0;
+                right: 0;
+                width: 100%;
+            }
+            .bg-primary {
+                width: 1400px;
+            }
+
+            .dropdown-menu li {
+                position: relative;
+            }
+            .bg-primary {
+                background-color: #207dda!important;
+            }
+
+            .dropdown-menu .submenu {
+                display: none;
+                left: 100%;
+                top: 0;
+            }
+
+            .navbar-dark .navbar-nav .nav-link {
+               color: rgba(253, 253, 253, 0.918);
+            }
+
+            .dropdown-menu>li:hover>.submenu,
+            .dropdown:hover>.dropdown-menu {
+                display: block;
+                color: rgba(253, 253, 253, 0.918);
+            }
+        }
+
+        .image-container {
+            display: inline-block; /* Use Flexbox to create a horizontal row */
+            justify-content: space-between; /* Space images evenly within the container */
+            border:1px solid black;
+        }
+        .image {
+            width: 10%; /* Set the width of each image to 30% of the container */
+            max-width: 100%; /* Ensure images don't exceed their natural size */
+            border:1px solid black;
+            margin: 20px 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+<!-- 
+        {%if messages%}
+        {% for message in messages%}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{message}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {%endfor%}
+        {%endif%} -->
+        
+
+
+            <!-- cards start -->
+            <section class="card_section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="card card-flush h-md-50 mb-5 mb-xl-10">
+                                <div class="card-header">
+                                    <div class="card-title d-flex flex-column">
+                                        <div class=" align-items-center">
+                                            <div>
+                                                <span class="fs-2hx fw-bold text-gray-900 me-2 lh-1 ls-n2">No of Feas. Reports-{{fh_count}}</span>
+                                            </div>
+                                            <div>
+                                                <span class="fs-2hx fw-bold text-gray-900 me-2 lh-1 ls-n2">New this month - {{current_month_data}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body pt-2 pb-4 d-flex align-items-center">
+                                    <img src="{% static 'images/dummy.jpg' %}" alt="Image 3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card card-flush h-md-50 mb-5 mb-xl-10">
+                                <!--begin::Header-->
+                                <div class="card-header">
+                                    <!--begin::Title-->
+                                    <div class="card-title d-flex flex-column">
+                                        <!--begin::Info-->
+                                        <div class="align-items-center">
+                                            <!--begin::Amount-->
+                                            <div>
+                                                <span
+                                                    class="fs-2hx fw-bold text-gray-900 me-2 lh-1 ls-n2">No of WO - {{wo_count}}
+                                                </span>
+                                            </div>
+                                            <div>
+                                                <span class="fs-2hx fw-bold text-gray-900 me-2 lh-1 ls-n2">New this month - {{wo_current_month_data}}</span>
+                                            </div>
+                                            <!--end::Amount-->
+                                        </div>                                       
+                                    </div>
+                                    <!--end::Title-->
+                                </div>
+                                <!--end::Header-->
+
+                                <!--begin::Card body-->
+                                <div
+                                    class="card-body pt-2 pb-4 d-flex align-items-center">
+                                    <!-- <img src="{% static 'images/dummy.jpg' %}" alt="Image 1" class="image"> -->
+                                    <img src="{% static 'images/dummy.jpg' %}" alt="Image 3">
+                                </div>
+                                <!--end::Card body-->
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-3">
+                            <div class="card card-flush h-md-50 mb-5 mb-xl-10">
+                                <!--begin::Header-->
+                                <div class="card-header">
+                                    <!--begin::Title-->
+                                    <div class="card-title d-flex flex-column">
+                                        <!--begin::Info-->
+                                        <div class="align-items-center">
+                                            <!--begin::Amount-->
+                                            <div>
+                                                <span
+                                                    class="fs-2hx fw-bold text-gray-900 me-2 lh-1 ls-n2">Total Notifications - {{np_data_all}}
+                                                </span>
+                                            </div>
+                                            <div>
+                                                <span class="fs-2hx fw-bold text-gray-900 me-2 lh-1 ls-n2">Pending Action - {{np_data}}</span>
+                                            </div>
+                                            <!--end::Amount-->
+                                        </div>
+                                        <!--end::Info-->
+
+                                        <!--begin::Subtitle-->
+                                        <span
+                                            class="text-gray-500 pt-1 fw-semibold fs-6">
+                                        </span>
+
+                                        <!--end::Subtitle-->
+                                    </div>
+                                    <!--end::Title-->
+                                </div>
+                                <!--end::Header-->
+
+                                <!--begin::Card body-->
+                                <div
+                                    class="card-body pt-2 pb-4 d-flex align-items-center">
+                                    <img src="{% static 'images/dummy.jpg' %}" alt="Image 3">
+
+                                </div>
+                                <!--end::Card body-->
+                            </div></div>
+                        <div class="col-md-3">
+                            <div class="card card-flush h-md-50 mb-5 mb-xl-10">
+                                <!--begin::Header-->
+                                <div class="card-header">
+                                    <!--begin::Title-->
+                                    <div class="card-title d-flex flex-column">
+                                        <!--begin::Info-->
+                                        <div class="align-items-center">
+                                            <!--begin::Amount-->
+                                            <div>
+                                                <span
+                                                    class="fs-2hx fw-bold text-gray-900 me-2 lh-1 ls-n2">Total No of RM - {{rm_count}}
+                                                </span>
+                                            </div>
+                                            <div>
+                                                <span class="fs-2hx fw-bold text-gray-900 me-2 lh-1 ls-n2">Zero Stock Items - {{rm_master_month_data}}</span>
+                                            </div>
+                
+                                            <!--end::Amount-->
+
+                                            <!--begin::Badge-->
+                                            <div>
+                                                <span
+                                                    class="badge badge-light-danger fs-base">
+                                                    <span
+                                                        class="path1"></span><span
+                                                        class="path2"></span></i>
+                                                        </span>
+                                                <span
+                                                class="badge badge-light-danger fs-base">
+                                                <span
+                                                    class="path1"></span><span
+                                                    class="path2"></span></i>
+
+                                        </span>
+                                        <br>
+                                        
+                                      
+                                    </div>
+                                    <!--end::Badge-->
+                                </div>
+                                <!--end::Info-->
+
+                                <!--begin::Subtitle-->
+      
+                                <!--end::Subtitle-->
+                            </div>
+                            <!--end::Title-->
+                        </div>
+                        <!--end::Header-->
+
+                        <!--begin::Card body-->
+                        <div
+                            class="card-body pt-2 pb-4 d-flex align-items-center">
+                            <img src="{% static 'images/dummy.jpg' %}" alt="Image 3">
+                        </div>
+                        <!--end::Card body-->
+                    </div>
+                </div>
+            </div>
+            </div>
+            </section>
+    <!-- Ends -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script>
+        window.addEventListener("resize", function () {
+            "use strict"; window.location.reload();
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            /////// Prevent closing from click inside dropdown
+            document.querySelectorAll('.dropdown-menu').forEach(function (element) {
+                element.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                });
+            })
+            // make it as accordion for smaller screens
+            if (window.innerWidth < 992) {
+                // close all inner dropdowns when parent is closed
+                document.querySelectorAll('.navbar .dropdown').forEach(function (everydropdown) {
+                    everydropdown.addEventListener('hidden.bs.dropdown', function () {
+                        // after dropdown is hidden, then find all submenus
+                        this.querySelectorAll('.submenu')
+                            .forEach(function (everysubmenu) {
+                                // hide every submenu as well
+                                everysubmenu
+                                    .style
+                                    .display =
+                                    'none';
+                            });
+                    })
+                });
+                document.querySelectorAll('.dropdown-menu a').forEach(function (element) {
+                    element.addEventListener('click', function (e) {
+                        let nextEl = this.nextElementSibling;
+                        if (nextEl && nextEl.classList
+                            .contains('submenu')) {
+                            // prevent opening link if link needs to open dropdown
+                            e.preventDefault();
+                            console.log(nextEl);
+                            if (nextEl.style.display ==
+                                'block') {
+                                nextEl.style.display =
+                                    'none';
+                            }
+                            else {
+
+                            
+                                nextEl.style.display =
+                                    'block';
+                            }
+                        }
+                    });
+                })
+            }
+            // end if innerWidth
+        });
+         // DOMContentLoaded  end
+
+
+        </script>
+        
+    </scriptsrc="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"> </script>
+        <!-- Bootstrap JS -->
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <!-- Slick Slider JS -->
+        <script src="js/slick.min.js"></script>
+        <script src="js/slick-animation.min.js"></script>
+        <!-- AOS Animation JS -->
+        <script src="js/aos.js"></script>
+        <!-- Gallery Popup JS -->
+        <script src="js/jquery.magnific-popup.js"></script>
+        <script src="js/my_js.js"></script>
+        <!-- ****************** -->
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <title>Blog Posts</title>
+    <style>
+        #filter-section {
+            margin-bottom: 20px;
+        }
+        .blog-post {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+
+    <div id="filter-section">
+        <label for="country-filter">Select Country:</label>
+        <select id="country-filter">
+            <option value="">All Countries</option>
+            {% for country in posts %}
+                <option value="{{ country.country }}">{{ country.country }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div id="blog-posts">
+        <!-- Loop through blog posts -->
+        {% for post in posts %}
+            <div class="blog-post" data-country="{{ post.country }}">
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.content }}</p>
+                <p><strong>Country:</strong> {{ post.country }}</p>
+                <p><em>Published on: {{ post.created_at }}</em></p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        // Function to filter blog posts by selected country
+        const filterPosts = () => {
+            const selectedCountry = document.getElementById('country-filter').value;
+            const posts = document.querySelectorAll('.blog-post');
+
+            posts.forEach(post => {
+                const postCountry = post.getAttribute('data-country');
+
+                // Show posts matching the selected country or all if "All Countries" is selected
+                if (!selectedCountry || postCountry === selectedCountry) {
+                    post.classList.remove('hidden');
+                } else {
+                    post.classList.add('hidden');
+                }
+            });
+        };
+
+        // Attach event listener to the dropdown
+        document.getElementById('country-filter').addEventListener('change', filterPosts);
+
+        // Optional: Automatically select and filter posts based on a detected country
+        const detectedCountry = "USA"; // This can be dynamically fetched via an API
+        const countryFilter = document.getElementById('country-filter');
+        if (Array.from(countryFilter.options).some(option => option.value === detectedCountry)) {
+            countryFilter.value = detectedCountry;
+            filterPosts();
+        }
+    </script>
+
+{% endblock content %}
+

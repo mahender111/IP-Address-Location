@@ -1,0 +1,36 @@
+table { 
+    height: 110px; 
+} 
+table thead th { 
+    position: sticky; 
+    top: 0px; 
+} 
+table { 
+    border-collapse: collapse;         
+    width: 100%; 
+} 
+th, 
+td { 
+    padding: 8px 15px; 
+    border: 2px solid #529432; 
+    background-color: #fff;
+} 
+th { 
+    background: #ABDD93; 
+} 
+
+.table_header{
+    top: 10%;
+    margin-left: 50px;
+    left: 0%;
+    z-index: -1;
+}
+
+section.section_table {
+    margin-top: 1%;
+    
+}
+.table-responsive{height:75vh;}
+.card{
+    margin: 0 -11px 0 -12px;
+}

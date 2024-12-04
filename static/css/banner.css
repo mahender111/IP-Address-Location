@@ -1,0 +1,48 @@
+.banner-container {
+position: relative ;
+height: 200px;
+overflow:hidden;
+}
+.banner img {
+display: inline-block;
+width: 48%;
+height: 400px;
+}
+
+.prev-button,
+.next-button {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background-color: #333;
+color: #fff;
+border: none;
+padding: 10px;
+border-radius: 50%;
+}
+
+.prev-button {
+left: 10px;
+}
+
+.next-button {
+right: 10px;
+}
+
+.prev-button i,
+.next-button i {
+font-size: 20px;
+}
+
+.logo {
+display: inline-block;
+margin: 0;
+}
+
+.logo img {
+max-width: 100px; /* Adjust the max width as needed */
+}
+
+.banner {
+    white-space: nowrap;
+    }
